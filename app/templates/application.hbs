@@ -1,3 +1,9 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">
+  {{#link-to 'books'}}Our Awesome Bookstore{{/link-to}}
+</h2>
 
-{{outlet}}
+<div class="{{if showingModal 'background' ''}}">
+  {{outlet}}
+</div>
+
+{{outlet "modal"}}
