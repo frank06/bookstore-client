@@ -6,6 +6,6 @@ moduleFor('route:publishing-houses', 'Unit | Route | publishing houses', {
 });
 
 test('it exists', function(assert) {
-  var route = this.subject();
+  let route = this.subject();
   assert.ok(route);
 });

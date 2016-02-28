@@ -2,10 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    contentSecurityPolicy: {
-      'style-src': "'self' 'unsafe-inline'"
-    },
-    modulePrefix: 'bookstore-client',
+    modulePrefix: 'bookstore',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

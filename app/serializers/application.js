@@ -1,12 +1,12 @@
 import DS from 'ember-data';
 
 export default DS.JSONAPISerializer.extend({
-  
+
   serialize() {
 
     const result = this._super(...arguments),
-      attr = result.data.attributes,
-      rel = result.data.relationships;
+      attr = result.data.attributes || {},
+      rel = result.data.relationships || {};
 
     return Object.keys(rel).reduce(function(acc, elem) {
       const data = rel[elem].data;
@@ -18,8 +18,7 @@ export default DS.JSONAPISerializer.extend({
       }
       return acc;
 
-    }, attr);    
-    
- } 
+    }, attr);
+ }
 
 });
