@@ -2,7 +2,7 @@ import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
   
-  shouldReloadRecord(store, snapshot) {
+  shouldReloadRecord() {
     return false;
   },
 
