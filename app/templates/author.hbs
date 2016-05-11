@@ -5,6 +5,6 @@
 <h4>Published titles:</h4>
 <ul>
 {{#each model.books as |book|}}
-  <li>{{book.title}}</li>
+  {{book-cover book=book}}
 {{/each}}
 </ul>

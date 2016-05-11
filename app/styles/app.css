@@ -10,17 +10,21 @@ ul {
   list-style-type: none;
 }
 
-ul li {
+ul div {
   display: inline-block;
   vertical-align: top;
   height: 250px;
   width: 200px;
-  border: 6px solid #AFAFAF;
-  margin: 1.5em;
-  margin-left: 0;
-  padding: 1em;
-  background: #E9E9E9;
   text-align: center;
+  padding: 0 1em 3em;
+}
+
+ul li {
+  padding: 1em;
+  border: 6px solid #AFAFAF;
+  background: #E9E9E9;
+  height: 90%;
+  cursor: pointer;
 }
 
 a {
@@ -58,7 +62,7 @@ a.author {
 	transition: opacity 400ms ease-in;
 }
 
-.background {
+.blur-background {
   z-index: -999;
   opacity: 0.3;
   pointer-events: none;

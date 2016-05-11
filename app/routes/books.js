@@ -19,22 +19,8 @@ export default Ember.Route.extend({
       this.transitionTo({ queryParams: { limit: total }}); // total?
     },
     
-    openCheckoutModal(book) {
-      this.controllerFor('application').set('showingModal', true);
-      return this.render('modal', {
-        outlet: 'modal',
-        into: 'application',
-        model: this.store.findRecord('book', book.id, { reload: true }),
-        controller: 'application'
-      });
-    },
-
-    closeCheckoutModal() {
-      this.controllerFor('application').set('showingModal', false);
-      return this.disconnectOutlet({
-        outlet: 'modal',
-        parentView: 'application'
-      });
+    blurBackground(blur) {
+      this.controllerFor('application').set('blur', blur);
     }
   }
 

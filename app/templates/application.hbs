@@ -2,8 +2,6 @@
   {{#link-to 'books'}}Our Awesome Bookstore{{/link-to}}
 </h2>
 
-<div class="{{if showingModal 'background' ''}}">
+<div class="{{if blur 'blur-background' ''}}">
   {{outlet}}
 </div>
-
-{{outlet "modal"}}

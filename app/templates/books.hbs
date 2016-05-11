@@ -1,12 +1,6 @@
 <ul>
   {{#each model as |book|}}
-  <a href="#" {{action 'openCheckoutModal' book}}>
-    <li>
-      <strong>{{book.title}}</strong><br><br>
-      <em>by</em>
-      {{#link-to 'author' book.author class="author" bubbles=false }}{{book.author.name}}{{/link-to}}
-    </li>
-  </a>
+    {{book-cover book=book blurBackground=(route-action "blurBackground")}}
   {{/each}}
 </ul>
 
