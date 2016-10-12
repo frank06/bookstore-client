@@ -1,17 +1,20 @@
-import JSONAPIAdapter from 'ember-data/adapters/json-api';
 import Ember from 'ember';
+import JSONAPIAdapter from 'ember-data/adapters/json-api';
+
+const { String: { pluralize, underscore } } = Ember;
 
 export default JSONAPIAdapter.extend({
 
-  pathForType: function(type) {
-    return Ember.String.pluralize(Ember.String.underscore(type));
+  pathForType(type) {
+    return pluralize(underscore(type));
   },
-  
-  shouldReloadRecord(store, snapshot) {
+
+  shouldReloadRecord() {
     return false;
   },
 
   shouldBackgroundReloadRecord(store, snapshot) {
+
     console.log("Calling shouldBackgroundReloadRecord");
     const loadedAt = snapshot.record.get('loadedAt');
 
