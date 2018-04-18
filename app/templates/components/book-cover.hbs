@@ -1,11 +1,11 @@
-<li {{action 'open'}}>
+<li {{action "open"}}>
   <strong>{{book.title}}</strong><br><br>
   <em>by</em>
   {{link-to book.author.name 'author' book.author.id class="author" }}
 </li>
 
 {{#if isShowingModal}}
-  {{#modal-dialog close="close" clickOutsideToClose=true}}
+  {{#modal-dialog onClose=(action 'close') clickOutsideToClose=true}}
 
     <div class="modal">
       <h3>Purchase confirmation</h3>

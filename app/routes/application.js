@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
-
+export default Route.extend({
+  
   actions: {
     blurBackground(blur) {
-     this.controllerFor('application').set('blur', blur);
+      this.controllerFor('application').set('blur', blur);
     }
   }
-
+  
 });

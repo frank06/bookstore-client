@@ -1,7 +1,7 @@
-import Ember from 'ember';
-const { computed } = Ember;
+import Controller from '@ember/controller';
+import { computed } from '@ember/object';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
 
   queryParams: ['limit'],
   limit: 5,
@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
     return this.get('model.meta').total;
   }),
 
-  showAll: computed('total', 'model', function() {
+  showAll: computed('total', 'model.[]', function() {
     return this.get('total') > this.get('model.length');
   })
 
